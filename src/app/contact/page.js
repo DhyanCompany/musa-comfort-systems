@@ -1,0 +1,191 @@
+import Image from 'next/image'
+
+export default function Contact() {
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-secondary to-secondary/80 text-white py-20">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1920&h=600&fit=crop"
+            alt="Contact Musa Comfort Systems"
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
+        </div>
+        <div className="relative container-custom">
+          <div className="max-w-4xl text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Contact Musa Comfort Systems
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-gray-100">
+              Get in touch for expert HVAC services, free quotes, and emergency support
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information */}
+      <section className="py-20 bg-white">
+        <div className="container-custom">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Phone */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-secondary mb-4">Call Us</h3>
+              <p className="text-gray-600 mb-4">For immediate service and emergencies</p>
+              <a href="tel:647-929-1730" className="text-2xl font-bold text-primary hover:text-primary/90">
+                647-929-1730
+              </a>
+              <p className="text-sm text-gray-500 mt-2">24/7 Emergency Service Available</p>
+            </div>
+
+            {/* Email */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-secondary mb-4">Email Us</h3>
+              <p className="text-gray-600 mb-4">For quotes and general inquiries</p>
+              <a href="mailto:info@musacomfortsystems.com" className="text-xl font-semibold text-primary hover:text-primary/90">
+                info@musacomfortsystems.com
+              </a>
+              <p className="text-sm text-gray-500 mt-2">We respond within 24 hours</p>
+            </div>
+
+            {/* Service Area */}
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-secondary mb-4">Service Area</h3>
+              <p className="text-gray-600 mb-4">Serving communities across Ontario</p>
+              <div className="text-lg font-semibold text-secondary">
+                Toronto, GTA & Beyond
+              </div>
+              <a href="/service-area" className="text-primary hover:text-primary/90 mt-2 inline-block">
+                View All Service Areas →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form */}
+      <section className="py-20 bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-secondary mb-4">Request a Free Quote</h2>
+              <p className="text-xl text-gray-600">
+                Fill out the form below and we'll get back to you with a competitive quote
+              </p>
+            </div>
+
+            <form className="bg-white rounded-lg shadow-lg p-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">First Name *</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Last Name *</label>
+                  <input
+                    type="text"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                  <input
+                    type="tel"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                  <input
+                    type="email"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-gray-700 font-semibold mb-2">Service Type *</label>
+                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <option value="">Select a service</option>
+                  <option value="furnace">Furnace Installation/Repair</option>
+                  <option value="ac">Air Conditioner Installation/Repair</option>
+                  <option value="heat-pump">Heat Pump Installation/Repair</option>
+                  <option value="water-heater">Water Heater Services</option>
+                  <option value="rtu">Rooftop Unit Services</option>
+                  <option value="gas-line">Gas Line Installation</option>
+                  <option value="commercial">Commercial HVAC</option>
+                  <option value="emergency">Emergency Service</option>
+                  <option value="maintenance">Maintenance Plan</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-gray-700 font-semibold mb-2">Message</label>
+                <textarea
+                  rows="4"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                  placeholder="Tell us about your HVAC needs..."
+                ></textarea>
+              </div>
+
+              <div className="mb-6">
+                <label className="flex items-center">
+                  <input type="checkbox" className="mr-2" required />
+                  <span className="text-gray-700">I agree to be contacted for HVAC service quotes</span>
+                </label>
+              </div>
+
+              <button type="submit" className="w-full btn-primary text-lg">
+                Get Free Quote
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Section */}
+      <section className="py-16 bg-red-600 text-white">
+        <div className="container-custom text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            HVAC Emergency?
+          </h2>
+          <p className="text-xl mb-6">
+            Don't wait! Our 24/7 emergency service team is ready to help
+          </p>
+          <a href="tel:647-929-1730" className="btn-secondary bg-white text-red-600 hover:bg-gray-100 text-lg">
+            Emergency Hotline: 647-929-1730
+          </a>
+        </div>
+      </section>
+    </div>
+  )
+}

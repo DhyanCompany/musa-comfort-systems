@@ -1,4 +1,5 @@
-import Image from 'next/image'
+import HeroBackground from '../../components/HeroBackground'
+import PageWrapper from '../../components/PageWrapper'
 
 export default function ServiceArea() {
   const cities = [
@@ -10,35 +11,22 @@ export default function ServiceArea() {
   ]
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-secondary to-secondary/80 text-white py-20">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&h=600&fit=crop"
-            alt="Ontario service areas"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-        </div>
-        <div className="relative container-custom">
-          <div className="max-w-4xl text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              HVAC Services Across Ontario
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100">
-              From Toronto to London, Musa Comfort Systems provides top-tier HVAC services to homes and businesses across multiple Ontario locations.
+    <PageWrapper>
+      <section className="page-hero">
+        <HeroBackground src="/pic/1.jpg" alt="Ontario service areas" priority imageClassName="opacity-50 md:opacity-40" />
+        <div className="hero-overlay" />
+        <div className="page-hero-content">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">HVAC Services Across Ontario</h1>
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100">
+              From Toronto to London, Musa Comfort Systems provides top-tier HVAC services across Ontario.
             </p>
-            <a href="tel:647-929-1730" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Call 647-929-1730
-            </a>
+            <a href="tel:647-929-1730" className="btn-primary bg-white text-primary hover:bg-gray-100">Call 647-929-1730</a>
           </div>
         </div>
       </section>
 
-      {/* Service Areas Grid */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-secondary mb-4">
@@ -153,6 +141,6 @@ export default function ServiceArea() {
           </div>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   )
 }

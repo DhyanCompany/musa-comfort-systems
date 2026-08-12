@@ -1,36 +1,24 @@
-import Image from 'next/image'
+import HeroBackground from '../../../components/HeroBackground'
+import PageWrapper from '../../../components/PageWrapper'
 
 export default function FurnacesAirConditioners() {
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-secondary to-secondary/80 text-white py-20">
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1605281317010-fe0b331db992?w=1920&h=600&fit=crop"
-            alt="Furnace and AC installation"
-            fill
-            className="object-cover opacity-30"
-            priority
-          />
-        </div>
-        <div className="relative container-custom">
+    <PageWrapper>
+      <section className="page-hero">
+        <HeroBackground src="/pic/furance.jpg" alt="Furnace and AC installation" priority imageClassName="opacity-50 md:opacity-40" />
+        <div className="hero-overlay" />
+        <div className="page-hero-content">
           <div className="max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Furnaces & Air Conditioners
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-100">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">Furnaces & Air Conditioners</h1>
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100">
               Expert installation, repair, and maintenance services for all major furnace and AC brands
             </p>
-            <a href="tel:647-929-1730" className="btn-primary bg-white text-primary hover:bg-gray-100">
-              Call 647-929-1730
-            </a>
+            <a href="tel:647-929-1730" className="btn-primary bg-white text-primary hover:bg-gray-100">Call 647-929-1730</a>
           </div>
         </div>
       </section>
 
-      {/* Service Details */}
-      <section className="py-20 bg-white">
+      <section className="section-spacing bg-white">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Furnaces */}
@@ -125,6 +113,6 @@ export default function FurnacesAirConditioners() {
           </div>
         </div>
       </section>
-    </div>
+    </PageWrapper>
   )
 }

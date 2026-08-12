@@ -11,23 +11,27 @@ import Partners from '../components/Partners'
 import ServiceArea from '../components/ServiceArea'
 import FAQ from '../components/FAQ'
 import Footer from '../components/Footer'
+import MobileCallBar from '../components/MobileCallBar'
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Header />
-      <Hero />
-      <Services />
-      <Promotions />
-      <Process />
-      <WhyChoose />
-      <Testimonials />
-      <Blog />
-      <Gallery />
-      <Partners />
-      <ServiceArea />
-      <FAQ />
+      <main>
+        <Hero />
+        <Services />
+        <Promotions />
+        <Process />
+        <WhyChoose />
+        <Testimonials />
+        <Blog />
+        <Gallery />
+        <Partners />
+        <ServiceArea />
+        <FAQ />
+      </main>
       <Footer />
-    </main>
+      <MobileCallBar />
+    </>
   )
 }

@@ -1,66 +1,75 @@
-import Image from 'next/image'
+'use client'
+
+import OptimizedImage from './OptimizedImage'
+
+const partners = [
+  {
+    name: 'Lennox',
+    logo: '/OIP (9).webp',
+  },
+  {
+    name: 'Goodman',
+    logo: '/OIP (10).webp',
+  },
+  {
+    name: 'Carrier',
+    logo: '/OIP (11).webp',
+  },
+  {
+    name: 'Trane',
+    logo: '/OIP (12).webp',
+  },
+  {
+    name: 'Rheem',
+    logo: '/OIP (13).webp',
+  },
+  {
+    name: 'Bryant',
+    logo: '/Bryant-Products.webp',
+  },
+]
+
+function LogoItem({ partner }) {
+  return (
+    <div className="flex-shrink-0 w-40 sm:w-48 mx-3 sm:mx-4">
+      <div className="h-24 sm:h-28 bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col items-center justify-center px-4 py-3 transition-transform duration-300 hover:scale-105 hover:shadow-md">
+        <OptimizedImage
+          src={partner.logo}
+          alt={partner.name}
+          fill={false}
+          width={80}
+          height={56}
+          className="object-contain mb-2 max-h-12 sm:max-h-14"
+          sizes="80px"
+          quality={85}
+        />
+        <span className="text-sm font-semibold text-secondary">{partner.name}</span>
+      </div>
+    </div>
+  )
+}
 
 export default function Partners() {
-  const partners = [
-    {
-      name: "Lennox",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Lennox_International_logo.svg/200px-Lennox_International_logo.svg.png",
-      description: "Premium heating and cooling systems"
-    },
-    {
-      name: "Goodman",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Goodman_logo.svg/200px-Goodman_logo.svg.png",
-      description: "Reliable and affordable HVAC solutions"
-    },
-    {
-      name: "Carrier",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Carrier_logo.svg/200px-Carrier_logo.svg.png",
-      description: "Innovative climate control systems"
-    },
-    {
-      name: "Trane",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Trane_logo.svg/200px-Trane_logo.svg.png",
-      description: "Energy-efficient heating and cooling"
-    },
-    {
-      name: "Rheem",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Rheem_logo.svg/200px-Rheem_logo.svg.png",
-      description: "Water heating and HVAC solutions"
-    },
-    {
-      name: "Bryant",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Bryant_Heating_%26_Cooling_Systems_logo.svg/200px-Bryant_Heating_%26_Cooling_Systems_logo.svg.png",
-      description: "Home comfort systems"
-    }
-  ]
+  const loop = [...partners, ...partners]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="section-spacing bg-white overflow-hidden">
       <div className="container-custom">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-secondary mb-4">
-            Trusted HVAC Partnerships for Quality Heating and Cooling Service
-          </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            We collaborate with industry-leading brands and partners to bring you the best HVAC technology, ensuring reliable and efficient heating and cooling solutions for your home comfort needs.
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="section-title">Trusted HVAC Brand Partnerships</h2>
+          <p className="section-subtitle">
+            We collaborate with industry-leading brands to bring you reliable, efficient heating and cooling solutions.
           </p>
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {partners.map((partner, index) => (
-            <div key={index} className="flex flex-col items-center text-center p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <div className="w-24 h-24 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm">
-                <Image
-                  src={partner.logo}
-                  alt={partner.name}
-                  width={64}
-                  height={64}
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="font-bold text-secondary mb-2">{partner.name}</h3>
-              <p className="text-sm text-gray-600">{partner.description}</p>
-            </div>
+      <div className="relative">
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-white to-transparent z-10" />
+
+        <div className="marquee-track flex w-max">
+          {loop.map((partner, index) => (
+            <LogoItem key={`${partner.name}-${index}`} partner={partner} />
           ))}
         </div>
       </div>

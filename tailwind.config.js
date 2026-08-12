@@ -8,9 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#ff6b35',
-        secondary: '#2c3e50',
+        primary: '#e85d26',
+        'primary-dark': '#c44d1a',
+        secondary: '#1a2b3c',
+        'secondary-light': '#2c3e50',
         accent: '#3498db',
+        surface: '#f8fafc',
+      },
+      boxShadow: {
+        card: '0 4px 20px rgba(26, 43, 60, 0.08)',
+        'card-hover': '0 8px 30px rgba(26, 43, 60, 0.14)',
       },
     },
   },

@@ -24,9 +24,12 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm sm:text-base">
-              <li><Link href="/#home" className="text-gray-300 hover:text-white">Home</Link></li>
-              <li><Link href="/#services" className="text-gray-300 hover:text-white">Services</Link></li>
+              <li><Link href="/" className="text-gray-300 hover:text-white">Home</Link></li>
+              <li><Link href="/services" className="text-gray-300 hover:text-white">Services</Link></li>
+              <li><Link href="/promotions" className="text-gray-300 hover:text-white">Promotions</Link></li>
+              <li><Link href="/about" className="text-gray-300 hover:text-white">About</Link></li>
               <li><Link href="/gallery" className="text-gray-300 hover:text-white">Gallery</Link></li>
+              <li><Link href="/testimonials" className="text-gray-300 hover:text-white">Testimonials</Link></li>
               <li><Link href="/contact" className="text-gray-300 hover:text-white">Contact</Link></li>
             </ul>
           </div>
@@ -34,6 +37,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Services</h3>
             <ul className="space-y-2 text-sm sm:text-base">
+              <li><Link href="/services" className="text-gray-300 hover:text-white">All Services</Link></li>
               <li><Link href="/services/heat-pumps" className="text-gray-300 hover:text-white">Heat Pumps</Link></li>
               <li><Link href="/services/furnaces-air-conditioners" className="text-gray-300 hover:text-white">Furnaces & AC</Link></li>
               <li><Link href="/services/rooftop-units-rtu" className="text-gray-300 hover:text-white">Rooftop Units</Link></li>

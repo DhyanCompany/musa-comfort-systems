@@ -32,64 +32,90 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 5500)
     return () => clearInterval(timer)
   }, [])
 
   return (
     <section
       id="home"
-      className="relative min-h-[100svh] sm:min-h-[85vh] flex items-center text-white overflow-hidden"
+      className="relative min-h-[100svh] flex items-end sm:items-center text-white overflow-hidden"
     >
+      {/* Full-bleed background slider */}
       <div className="absolute inset-0 overflow-hidden bg-secondary">
         {slides.map((slide, index) => (
           <div
             key={slide.src}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === active
-                ? 'opacity-100 scale-100 translate-x-0'
-                : index === (active - 1 + slides.length) % slides.length
-                  ? 'opacity-0 scale-105 -translate-x-8'
-                  : 'opacity-0 scale-105 translate-x-8'
+            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
+              index === active ? 'opacity-100' : 'opacity-0'
             }`}
             aria-hidden={index !== active}
           >
-            <OptimizedImage
-              src={slide.src}
-              alt={slide.alt}
-              priority={index === 0}
-              sizes="100vw"
-              quality={80}
-              className="hero-bg-image"
-            />
+            <div
+              className={`absolute inset-0 ${
+                index === active ? 'animate-kenburns' : ''
+              }`}
+            >
+              <OptimizedImage
+                src={slide.src}
+                alt={slide.alt}
+                priority={index === 0}
+                sizes="100vw"
+                quality={82}
+                className="hero-bg-image"
+              />
+            </div>
           </div>
         ))}
       </div>
-      <div className="hero-overlay" />
 
-      <div className="relative container-custom px-4 sm:px-6 lg:px-8 w-full z-10 pb-16 sm:pb-20 pt-24 sm:pt-28 md:pt-32">
-        <div className="max-w-3xl animate-fade-up">
-          <p className="text-primary font-semibold text-sm sm:text-base uppercase tracking-wider mb-3">
+      {/* Atmospheric overlays — readable text, photo still visible */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-secondary/90 via-secondary/55 to-secondary/25" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-secondary via-transparent to-black/35" />
+      <div className="absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+
+      <div className="relative container-custom w-full z-10 px-4 sm:px-6 lg:px-8 pt-28 pb-24 sm:pt-32 sm:pb-28 md:pt-36 md:pb-32">
+        <div className="max-w-2xl lg:max-w-3xl">
+          <p className="animate-fade-up text-primary font-semibold text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 sm:mb-5">
             TSSA Approved Licensed Technician
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            Musa Comfort Systems
+
+          <h1 className="animate-fade-up animation-delay-100 font-bold leading-[1.05] tracking-tight mb-5 sm:mb-6">
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
+              Musa Comfort
+            </span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary mt-1">
+              Systems
+            </span>
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl mb-6 sm:mb-8 text-gray-100 leading-relaxed">
-            Reliable Residential & Commercial HVAC Services — Over 10+ Years of Experience
+
+          <p className="animate-fade-up animation-delay-200 text-base sm:text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8 sm:mb-10">
+            Reliable residential &amp; commercial HVAC — 10+ years of honest service across Ontario.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="tel:647-929-1730" className="btn-primary bg-white text-primary hover:bg-gray-100 hover:scale-105">
+
+          <div className="animate-fade-up animation-delay-300 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <a
+              href="tel:647-929-1730"
+              className="btn-primary bg-primary hover:bg-primary-dark text-white hover:scale-[1.03] shadow-lg shadow-primary/30"
+            >
               Call Now
             </a>
-            <a href="/contact" className="btn-outline hover:scale-105">
+            <a
+              href="/contact"
+              className="btn-outline border-white/80 hover:bg-white hover:text-secondary hover:scale-[1.03]"
+            >
               Get In Touch
             </a>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20" role="tablist" aria-label="Hero slides">
+      {/* Slide controls */}
+      <div
+        className="absolute bottom-14 sm:bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2"
+        role="tablist"
+        aria-label="Hero slides"
+      >
         {slides.map((_, index) => (
           <button
             key={index}
@@ -98,8 +124,10 @@ export default function Hero() {
             aria-selected={index === active}
             aria-label={`Go to slide ${index + 1}`}
             onClick={() => setActive(index)}
-            className={`h-2.5 rounded-full transition-all duration-300 ${
-              index === active ? 'w-8 bg-primary' : 'w-2.5 bg-white/50 hover:bg-white/80'
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === active
+                ? 'w-9 bg-primary'
+                : 'w-2 bg-white/45 hover:bg-white/80'
             }`}
           />
         ))}

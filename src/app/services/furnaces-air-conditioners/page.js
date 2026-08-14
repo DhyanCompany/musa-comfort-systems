@@ -106,7 +106,7 @@ export default function FurnacesAirConditioners() {
               <a href="tel:647-929-1730" className="btn-secondary bg-white text-primary hover:bg-gray-100">
                 Call 647-929-1730
               </a>
-              <a href="#contact" className="btn-secondary border-2 border-white hover:bg-white hover:text-primary">
+              <a href="/contact" className="btn-secondary border-2 border-white hover:bg-white hover:text-primary">
                 Get Free Quote
               </a>
             </div>

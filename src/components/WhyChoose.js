@@ -31,11 +31,22 @@ export default function WhyChoose() {
   return (
     <section id="about" className="section-spacing bg-white">
       <div className="container-custom">
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="section-title">Why Choose Musa Comfort Systems?</h2>
-          <p className="section-subtitle">
-            TSSA Approved Licensed Technician providing quality work and honest service. Over 10+ years of experience delivering reliable residential & commercial HVAC solutions across Ontario.
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-14">
+          <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-[0.18em] mb-3">
+            About Us
           </p>
+          <h2 className="section-title">About Musa Comfort Systems</h2>
+          <div className="space-y-4 sm:space-y-5 text-left sm:text-center mt-6">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
+              At Musa Comfort Systems, we are dedicated to providing reliable, professional, and affordable heating, cooling, ventilation, and mechanical solutions for residential and commercial customers across the Greater Toronto Area and Ontario. With 10+ years of hands-on HVAC and mechanical experience, our team has extensive expertise in furnace and air conditioner installation and repair, heat pumps, rooftop units, water heaters, gas lines, ventilation systems, indoor air quality, and complete HVAC system installations.
+            </p>
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg leading-relaxed">
+              We are committed to delivering quality workmanship, safe and code-compliant installations, honest recommendations, transparent pricing, and dependable customer service on every project. Whether you need a new HVAC system, emergency repair, seasonal maintenance, or a customized comfort solution, Musa Comfort Systems works closely with every customer to understand their needs and provide the right solution for their home or business.
+            </p>
+            <p className="text-secondary font-bold text-lg sm:text-xl md:text-2xl pt-2">
+              Your Comfort. Our Commitment.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

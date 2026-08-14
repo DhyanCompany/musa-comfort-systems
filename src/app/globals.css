@@ -95,7 +95,23 @@
 
 @layer utilities {
   .animate-fade-up {
-    animation: fadeUp 0.8s ease-out both;
+    animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.12s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.24s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.36s;
+  }
+
+  .animate-kenburns {
+    animation: kenburns 5.5s ease-out both;
   }
 
   .animate-testimonial-fade {
@@ -113,6 +129,7 @@
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-up,
     .animate-testimonial-fade,
+    .animate-kenburns,
     .marquee-track {
       animation: none !important;
     }
@@ -126,11 +143,20 @@
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(28px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
   }
 }
 

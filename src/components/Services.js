@@ -116,12 +116,15 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="section-spacing bg-surface">
+    <section id="services" className="section-spacing bg-surface -mt-6 sm:-mt-8 relative z-10">
       <div className="container-custom">
-        <div className="text-center mb-10 md:mb-16">
-          <h2 className="section-title">Our Professional HVAC Services</h2>
+        <div className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
+          <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-[0.18em] mb-3">
+            What We Do
+          </p>
+          <h2 className="section-title">Professional HVAC Services</h2>
           <p className="section-subtitle">
-            TSSA Approved Licensed Technician providing reliable residential & commercial HVAC services. Quality work and honest service with over 10+ years of experience serving Ontario.
+            Quality installation, repair, and maintenance — residential and commercial across Ontario.
           </p>
         </div>
 

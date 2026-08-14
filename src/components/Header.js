@@ -5,12 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const navLinks = [
-  { href: '/#home', label: 'Home' },
-  { href: '/#services', label: 'Services' },
-  { href: '/#promotions', label: 'Promotions' },
-  { href: '/#about', label: 'About' },
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/promotions', label: 'Promotions' },
+  { href: '/about', label: 'About' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/#testimonials', label: 'Testimonials' },
+  { href: '/testimonials', label: 'Testimonials' },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -54,18 +54,39 @@ export default function Header() {
         }`}
       >
         <div className="container-custom">
-          <div className="flex justify-between items-center py-2.5 sm:py-3 md:py-4 gap-3">
+          <div className="flex justify-between items-center py-2 sm:py-3 md:py-4 gap-2 sm:gap-3">
             <Link
               href="/"
-              className="flex items-center min-w-0 shrink max-w-[78%] sm:max-w-none relative z-[110]"
+              className="flex items-center min-w-0 flex-1 relative z-[110]"
               onClick={closeMenu}
             >
+              {/* Mobile: short brand name so it stays readable without crowding the bar */}
+              <span className="sm:hidden flex items-center gap-2.5 min-w-0">
+                <Image
+                  src="/musa-comfort-systems-logo.png"
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="h-12 w-12 shrink-0 object-cover object-left rounded-md"
+                  priority
+                  aria-hidden="true"
+                />
+                <span
+                  className={`font-bold text-[1.35rem] leading-none tracking-tight truncate ${
+                    solid || isMenuOpen ? 'text-secondary' : 'text-white'
+                  }`}
+                >
+                  Musa <span className="text-primary">Comfort</span>
+                </span>
+              </span>
+
+              {/* Tablet/Desktop: full logo, larger */}
               <Image
                 src="/musa-comfort-systems-logo.png"
                 alt="Musa Comfort Systems - TSSA Approved"
-                width={420}
-                height={108}
-                className="h-11 sm:h-12 md:h-14 w-auto object-contain object-left rounded-md"
+                width={480}
+                height={120}
+                className="hidden sm:block h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain object-left rounded-md"
                 priority
               />
             </Link>

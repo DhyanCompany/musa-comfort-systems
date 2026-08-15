@@ -4,7 +4,8 @@ export default function Services() {
   const services = [
     {
       title: 'Furnaces',
-      image: '/pic/furance.jpg',
+      image: '/services/product-bryant.jpg',
+      imageClass: 'object-cover object-[12%_28%]',
       description: 'Expert furnace installation, repair and maintenance for all major brands',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -16,7 +17,8 @@ export default function Services() {
     },
     {
       title: 'Air Conditioners',
-      image: '/pic/ac  air  conditioner.jpg',
+      image: '/services/product-ac-service.jpg',
+      imageClass: 'object-cover object-center',
       description: 'Central AC installation and service for residential and commercial properties',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -27,7 +29,8 @@ export default function Services() {
     },
     {
       title: 'Rooftop Units (RTU)',
-      image: '/pic/roof top unit.jpg',
+      image: '/services/product-rooftop.jpg',
+      imageClass: 'object-cover object-center',
       description: 'Commercial rooftop unit installation and service',
       href: '/services/rooftop-units-rtu',
       icon: (
@@ -38,7 +41,8 @@ export default function Services() {
     },
     {
       title: 'Heat Pumps',
-      image: '/pic/heat pump.jpg',
+      image: '/services/product-heat-pump.jpg',
+      imageClass: 'object-cover object-center',
       description: 'Energy-efficient heat pump solutions',
       href: '/services/heat-pumps',
       icon: (
@@ -49,7 +53,8 @@ export default function Services() {
     },
     {
       title: 'Hot Water Tanks',
-      image: '/pic/hot water tank.jpg',
+      image: '/services/product-hot-water.jpg',
+      imageClass: 'object-cover object-center',
       description: 'Tankless and traditional water heater installation and repair',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -60,7 +65,8 @@ export default function Services() {
     },
     {
       title: 'Gas Line Installation',
-      image: '/pic/gasline.jpg',
+      image: '/services/product-gas-line.jpg',
+      imageClass: 'object-cover object-center',
       description: 'Professional gas line installation services',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -71,7 +77,8 @@ export default function Services() {
     },
     {
       title: 'Commercial Restaurant Equipment',
-      image: '/restaurant-equipment-hvac.jpg',
+      image: '/services/product-restaurant.jpg',
+      imageClass: 'object-cover object-center',
       description: 'Restaurant HVAC equipment installation & repair',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -82,7 +89,8 @@ export default function Services() {
     },
     {
       title: 'HRV Systems',
-      image: '/OIP.webp',
+      image: '/services/product-bryant.jpg',
+      imageClass: 'object-cover object-[78%_18%]',
       description: 'Heat Recovery Ventilation systems',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -93,7 +101,8 @@ export default function Services() {
     },
     {
       title: 'Water Softeners & RO Systems',
-      image: '/pic/ro system.jpg',
+      image: '/services/product-hot-water.jpg',
+      imageClass: 'object-cover object-[75%_center]',
       description: 'Water treatment and purification systems',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -104,7 +113,8 @@ export default function Services() {
     },
     {
       title: 'Carbon Filters & Humidifiers',
-      image: '/OIP (2).webp',
+      image: '/services/product-bryant.jpg',
+      imageClass: 'object-cover object-left',
       description: 'Indoor air quality solutions',
       href: '/services/furnaces-air-conditioners',
       icon: (
@@ -140,8 +150,8 @@ export default function Services() {
                   src={service.image}
                   alt={service.title}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                  quality={70}
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  quality={75}
+                  className={`${service.imageClass || 'object-cover'} transition-transform duration-500 group-hover:scale-110`}
                 />
               </div>
               <div className="p-4 sm:p-6">

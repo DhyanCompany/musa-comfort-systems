@@ -57,36 +57,15 @@ export default function Header() {
           <div className="flex justify-between items-center py-2 sm:py-3 md:py-4 gap-2 sm:gap-3">
             <Link
               href="/"
-              className="flex items-center min-w-0 flex-1 relative z-[110]"
+              className="flex items-center min-w-0 flex-1 pr-2 relative z-[110]"
               onClick={closeMenu}
             >
-              {/* Mobile: short brand name so it stays readable without crowding the bar */}
-              <span className="sm:hidden flex items-center gap-2.5 min-w-0">
-                <Image
-                  src="/musa-comfort-systems-logo.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                  className="h-12 w-12 shrink-0 object-cover object-left rounded-md"
-                  priority
-                  aria-hidden="true"
-                />
-                <span
-                  className={`font-bold text-[1.35rem] leading-none tracking-tight truncate ${
-                    solid || isMenuOpen ? 'text-secondary' : 'text-white'
-                  }`}
-                >
-                  Musa <span className="text-primary">Comfort</span>
-                </span>
-              </span>
-
-              {/* Tablet/Desktop: full logo, larger */}
               <Image
                 src="/musa-comfort-systems-logo.png"
                 alt="Musa Comfort Systems - TSSA Approved"
                 width={480}
                 height={120}
-                className="hidden sm:block h-14 md:h-16 lg:h-[4.5rem] w-auto object-contain object-left rounded-md"
+                className="h-12 sm:h-14 md:h-16 lg:h-[4.5rem] w-auto max-w-full object-contain object-left rounded-md"
                 priority
               />
             </Link>

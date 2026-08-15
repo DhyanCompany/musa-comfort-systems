@@ -1,11 +1,12 @@
 import HeroBackground from '../../../components/HeroBackground'
 import PageWrapper from '../../../components/PageWrapper'
+import OptimizedImage from '../../../components/OptimizedImage'
 
 export default function HeatPumps() {
   return (
     <PageWrapper>
       <section className="page-hero">
-        <HeroBackground src="/pic/heat pump.jpg" alt="Heat pump installation" priority imageClassName="opacity-50 md:opacity-40" />
+        <HeroBackground src="/services/product-heat-pump.jpg" alt="Heat pump installation" priority imageClassName="opacity-50 md:opacity-40" />
         <div className="hero-overlay" />
         <div className="page-hero-content">
           <div className="max-w-4xl">
@@ -20,6 +21,15 @@ export default function HeatPumps() {
 
       <section className="section-spacing bg-white">
         <div className="container-custom">
+          <div className="relative h-52 sm:h-64 md:h-72 rounded-xl overflow-hidden bg-gray-200 mb-10 md:mb-12">
+            <OptimizedImage
+              src="/services/product-heat-pump.jpg"
+              alt="Heat pump product"
+              quality={75}
+              className="object-cover object-center"
+            />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Types of Heat Pumps */}
             <div>

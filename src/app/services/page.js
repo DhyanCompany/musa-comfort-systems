@@ -7,7 +7,7 @@ export default function ServicesPage() {
     <PageWrapper>
       <section className="page-hero">
         <HeroBackground
-          src="/pic/furance.jpg"
+          src="/services/product-heat-pump.jpg"
           alt="Musa Comfort Systems HVAC services"
           priority
           imageClassName="opacity-50 md:opacity-40"

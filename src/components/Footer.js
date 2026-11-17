@@ -7,13 +7,13 @@ export default function Footer() {
       <div className="container-custom section-padding">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="inline-block bg-white rounded-lg px-4 py-2.5 mb-4">
+            <Link href="/" className="inline-flex h-16 w-[235px] items-center overflow-hidden rounded-lg bg-white mb-4">
               <Image
                 src="/musa-comfort-systems-logo.png"
                 alt="Musa Comfort Systems"
                 width={280}
                 height={72}
-                className="h-12 sm:h-14 w-auto object-contain"
+                className="h-full w-full object-cover object-center"
               />
             </Link>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">

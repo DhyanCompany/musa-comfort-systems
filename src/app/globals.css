@@ -16,7 +16,7 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-primary hover:bg-primary-dark active:scale-[0.98] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-center min-h-[44px] hover:shadow-lg;
+    @apply inline-flex items-center justify-center bg-secondary hover:bg-primary active:scale-[0.98] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 text-center min-h-[44px] hover:shadow-lg;
   }
 
   .btn-secondary {
@@ -40,7 +40,7 @@
   }
 
   .section-title {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary mb-3 sm:mb-4;
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary mb-3 sm:mb-4 tracking-tight;
   }
 
   .section-subtitle {
@@ -48,7 +48,7 @@
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden;
+    @apply bg-white rounded-lg shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden;
   }
 
   .service-card {
@@ -57,6 +57,16 @@
 
   .page-hero {
     @apply relative bg-gradient-to-r from-secondary to-secondary-light text-white overflow-hidden min-h-[420px] sm:min-h-[480px] md:min-h-[520px] flex items-center pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-36 md:pb-24;
+  }
+
+  .eyebrow {
+    @apply text-primary font-bold text-xs sm:text-sm uppercase tracking-[0.16em];
+  }
+
+  .section-kicker::before,
+  .section-kicker::after {
+    content: '';
+    @apply inline-block align-middle w-8 sm:w-12 h-px bg-primary mx-3;
   }
 
   .page-hero-content {

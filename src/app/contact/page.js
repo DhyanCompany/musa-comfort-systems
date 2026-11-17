@@ -1,5 +1,6 @@
 import HeroBackground from '../../components/HeroBackground'
 import PageWrapper from '../../components/PageWrapper'
+import QuoteForm from '../../components/QuoteForm'
 
 export default function Contact() {
   return (
@@ -83,82 +84,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <form className="bg-white rounded-lg shadow-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">First Name *</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Last Name *</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Phone Number *</label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-gray-700 font-semibold mb-2">Email Address *</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-2">Service Type *</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                  <option value="">Select a service</option>
-                  <option value="furnace">Furnace Installation/Repair</option>
-                  <option value="ac">Air Conditioner Installation/Repair</option>
-                  <option value="heat-pump">Heat Pump Installation/Repair</option>
-                  <option value="water-heater">Water Heater Services</option>
-                  <option value="rtu">Rooftop Unit Services</option>
-                  <option value="gas-line">Gas Line Installation</option>
-                  <option value="commercial">Commercial HVAC</option>
-                  <option value="emergency">Emergency Service</option>
-                  <option value="maintenance">Maintenance Plan</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-gray-700 font-semibold mb-2">Message</label>
-                <textarea
-                  rows="4"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Tell us about your HVAC needs..."
-                ></textarea>
-              </div>
-
-              <div className="mb-6">
-                <label className="flex items-center">
-                  <input type="checkbox" className="mr-2" required />
-                  <span className="text-gray-700">I agree to be contacted for HVAC service quotes</span>
-                </label>
-              </div>
-
-              <button type="submit" className="w-full btn-primary text-lg">
-                Get Free Quote
-              </button>
-            </form>
+            <QuoteForm />
           </div>
         </div>
       </section>

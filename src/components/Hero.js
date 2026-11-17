@@ -1,136 +1,40 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import OptimizedImage from './OptimizedImage'
 
-const slides = [
-  {
-    src: '/WhatsApp Image 2026-03-07 at 22.14.03.jpeg',
-    alt: 'HVAC professional working',
-  },
-  {
-    src: '/pic/furance.jpg',
-    alt: 'Furnace installation service',
-  },
-  {
-    src: '/pic/ac  air  conditioner.jpg',
-    alt: 'Air conditioner service',
-  },
-  {
-    src: '/pic/heat pump.jpg',
-    alt: 'Heat pump installation',
-  },
-  {
-    src: '/pic/roof top unit.jpg',
-    alt: 'Commercial rooftop unit',
-  },
-]
-
 export default function Hero() {
-  const [active, setActive] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % slides.length)
-    }, 5500)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
-    <section
-      id="home"
-      className="relative min-h-[100svh] flex items-end sm:items-center text-white overflow-hidden"
-    >
-      {/* Full-bleed background slider */}
-      <div className="absolute inset-0 overflow-hidden bg-secondary">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.src}
-            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
-              index === active ? 'opacity-100' : 'opacity-0'
-            }`}
-            aria-hidden={index !== active}
-          >
-            <div
-              className={`absolute inset-0 ${
-                index === active ? 'animate-kenburns' : ''
-              }`}
-            >
-              <OptimizedImage
-                src={slide.src}
-                alt={slide.alt}
-                priority={index === 0}
-                sizes="100vw"
-                quality={82}
-                className="hero-bg-image"
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Atmospheric overlays — readable text, photo still visible */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-secondary/90 via-secondary/55 to-secondary/25" />
-      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-secondary via-transparent to-black/35" />
-      <div className="absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-white to-transparent pointer-events-none" />
-
-      <div className="relative container-custom w-full z-10 px-4 sm:px-6 lg:px-8 pt-28 pb-24 sm:pt-32 sm:pb-28 md:pt-36 md:pb-32">
-        <div className="max-w-2xl lg:max-w-3xl">
-          <p className="animate-fade-up text-primary font-semibold text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 sm:mb-5">
-            TSSA Approved Licensed Technician
-          </p>
-
-          <h1 className="animate-fade-up animation-delay-100 font-bold leading-[1.05] tracking-tight mb-5 sm:mb-6">
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
-              Musa Comfort
-            </span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary mt-1">
-              Systems
-            </span>
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#f7fcff] via-white to-[#dff3ff] pt-24 md:pt-32">
+      <div className="absolute right-0 top-0 h-full w-[49%] hidden lg:block bg-secondary" />
+      <div className="relative container-custom grid lg:grid-cols-[.92fr_1.08fr] items-center min-h-[620px] lg:min-h-[590px] gap-8 py-12 lg:py-0">
+        <div className="relative z-10 max-w-xl">
+          <p className="eyebrow mb-4">Your comfort is our priority</p>
+          <h1 className="font-bold leading-[1.05] tracking-tight mb-5">
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-secondary">Reliable Heating &amp; Cooling</span>
+            <span className="block text-4xl sm:text-5xl lg:text-6xl text-primary mt-1">for Your Home or Business</span>
           </h1>
-
-          <p className="animate-fade-up animation-delay-200 text-base sm:text-lg md:text-xl text-white/85 leading-relaxed max-w-xl mb-8 sm:mb-10">
-            Reliable residential &amp; commercial HVAC — 10+ years of honest service across Ontario.
+          <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg mb-6">
+            Professional HVAC solutions across Ontario. Quality work, honest service, and customer satisfaction on every visit.
           </p>
-
-          <div className="animate-fade-up animation-delay-300 flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a
-              href="tel:647-929-1730"
-              className="btn-primary bg-primary hover:bg-primary-dark text-white hover:scale-[1.03] shadow-lg shadow-primary/30"
-            >
-              Call Now
-            </a>
-            <a
-              href="/contact"
-              className="btn-outline border-white/80 hover:bg-white hover:text-secondary hover:scale-[1.03]"
-            >
-              Get In Touch
-            </a>
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-7 text-secondary">
+            {[['✓', 'TSSA Approved'], ['10+', 'Years Experience'], ['⌂', 'Residential & Commercial']].map(([icon, label]) => (
+              <div key={label} className="text-center sm:text-left">
+                <div className="font-extrabold text-lg text-primary">{icon}</div>
+                <div className="text-[11px] sm:text-xs font-bold leading-tight">{label}</div>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a href="/contact" className="btn-primary hover:scale-[1.02]">Get a Free Quote&nbsp; →</a>
+            <a href="tel:647-929-1730" className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-primary py-3 px-6 min-h-[44px] font-bold text-secondary hover:bg-primary hover:text-white transition-all">☎ &nbsp;647-929-1730</a>
           </div>
         </div>
-      </div>
-
-      {/* Slide controls */}
-      <div
-        className="absolute bottom-14 sm:bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2"
-        role="tablist"
-        aria-label="Hero slides"
-      >
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            type="button"
-            role="tab"
-            aria-selected={index === active}
-            aria-label={`Go to slide ${index + 1}`}
-            onClick={() => setActive(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              index === active
-                ? 'w-9 bg-primary'
-                : 'w-2 bg-white/45 hover:bg-white/80'
-            }`}
-          />
-        ))}
+        <div className="relative h-[300px] sm:h-[390px] lg:h-[590px] lg:-mr-8 overflow-hidden rounded-2xl lg:rounded-none shadow-2xl">
+          <OptimizedImage src="/musa-comfort-fleet.jpeg" alt="Musa Comfort Systems service vehicle" priority sizes="(max-width: 1024px) 100vw, 60vw" quality={88} className="object-cover object-[58%_top]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-secondary/35 via-transparent to-transparent" />
+          <div className="absolute bottom-5 left-5 right-5 rounded-xl bg-secondary/95 p-4 text-white shadow-xl">
+            <p className="font-bold text-sm text-accent uppercase tracking-wider">Complete HVAC Services</p>
+            <p className="font-semibold text-lg">Comfort All Year Round</p>
+          </div>
+        </div>
       </div>
     </section>
   )

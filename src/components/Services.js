@@ -126,49 +126,30 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="section-spacing bg-surface -mt-6 sm:-mt-8 relative z-10">
+    <section id="services" className="section-spacing bg-surface relative z-10">
       <div className="container-custom">
         <div className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
-          <p className="text-primary font-semibold text-xs sm:text-sm uppercase tracking-[0.18em] mb-3">
-            What We Do
-          </p>
-          <h2 className="section-title">Professional HVAC Services</h2>
+          <p className="section-kicker eyebrow mb-3">Our Services</p>
+          <h2 className="section-title">Complete HVAC Services</h2>
           <p className="section-subtitle">
-            Quality installation, repair, and maintenance — residential and commercial across Ontario.
+            From home comfort to commercial solutions, we provide reliable HVAC services for all your heating, cooling and ventilation needs.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           {services.map((service, index) => (
             <a
               key={index}
               href={service.href}
-              className="group card service-card block"
+              className="group block rounded-lg border border-blue-100 bg-white p-4 sm:p-5 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-card-hover"
             >
-              <div className="h-44 sm:h-48 relative bg-gray-200 overflow-hidden">
-                <OptimizedImage
-                  src={service.image}
-                  alt={service.title}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                  quality={75}
-                  className={`${service.imageClass || 'object-cover'} transition-transform duration-500 group-hover:scale-110`}
-                />
-              </div>
-              <div className="p-4 sm:p-6">
-                <div className="flex items-center gap-3 mb-2 sm:mb-3">
-                  <span className="service-icon inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:scale-110">
-                    {service.icon}
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-bold text-secondary group-hover:text-primary transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-4 text-sm sm:text-base">{service.description}</p>
-                <span className="text-primary font-semibold inline-flex items-center gap-1 transition-all duration-300 group-hover:gap-2">
-                  Read More
-                  <span aria-hidden="true">→</span>
-                </span>
-              </div>
+              <span className="mx-auto mb-3 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#e7f5fe] text-primary transition-all duration-300 group-hover:bg-secondary group-hover:text-white group-hover:scale-110">
+                {service.icon}
+              </span>
+              <h3 className="text-sm sm:text-base font-bold leading-tight text-secondary group-hover:text-primary transition-colors duration-300">
+                {service.title}
+              </h3>
+              <span className="mt-2 block text-xs font-semibold text-primary opacity-0 transition-opacity group-hover:opacity-100">Learn More →</span>
             </a>
           ))}
         </div>

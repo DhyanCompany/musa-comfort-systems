@@ -46,18 +46,25 @@ export default function Header() {
 
   return (
     <>
+      <div className="hidden md:block fixed top-0 left-0 right-0 z-[101] bg-secondary text-white text-xs">
+        <div className="container-custom flex items-center justify-between h-9">
+          <span>● &nbsp; Serving the Greater Toronto Area &amp; Ontario</span>
+          <div className="flex items-center gap-6 font-semibold">
+            <a href="tel:647-929-1730" className="hover:text-accent">☎ &nbsp;647-929-1730</a>
+            <a href="mailto:info@musacomfort.com" className="hover:text-accent">✉ &nbsp;info@musacomfort.com</a>
+          </div>
+        </div>
+      </div>
       <header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-          solid || isMenuOpen
-            ? 'bg-white shadow-md border-b border-gray-100'
-            : 'bg-transparent border-b border-transparent shadow-none'
+        className={`fixed top-0 md:top-9 left-0 right-0 z-[100] transition-all duration-300 ${
+          'bg-white shadow-sm border-b border-blue-50'
         }`}
       >
         <div className="container-custom">
-          <div className="flex justify-between items-center py-2 sm:py-3 md:py-4 gap-2 sm:gap-3">
+          <div className="flex justify-between items-center py-2 sm:py-3 gap-2 sm:gap-3">
             <Link
               href="/"
-              className="flex items-center min-w-0 flex-1 pr-2 relative z-[110]"
+              className="flex h-12 w-[205px] sm:h-14 sm:w-[242px] items-center overflow-hidden shrink-0 relative z-[110]"
               onClick={closeMenu}
             >
               <Image
@@ -65,20 +72,18 @@ export default function Header() {
                 alt="Musa Comfort Systems - TSSA Approved"
                 width={480}
                 height={120}
-                className="h-12 sm:h-14 md:h-16 lg:h-[4.5rem] w-auto max-w-full object-contain object-left rounded-md"
+                className="h-full w-full scale-[1.02] object-cover object-center"
                 priority
               />
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+            <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`transition-colors duration-200 text-sm font-medium whitespace-nowrap relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full ${
-                    solid || isMenuOpen
-                      ? 'text-gray-700 hover:text-primary'
-                      : 'text-white hover:text-primary'
+                    'text-secondary hover:text-primary'
                   }`}
                 >
                   {link.label}
@@ -89,7 +94,7 @@ export default function Header() {
             <div className="flex items-center gap-2 shrink-0 relative z-[110]">
               <a
                 href="tel:647-929-1730"
-                className="hidden md:inline-flex btn-primary text-sm hover:scale-105"
+                className="hidden md:inline-flex btn-primary text-sm hover:scale-105 rounded-md"
               >
                 Call Now
               </a>

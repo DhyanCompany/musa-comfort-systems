@@ -20,6 +20,22 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <div className="bg-secondary text-white">
+          <div className="container-custom grid grid-cols-2 md:grid-cols-5 divide-x divide-white/20">
+            {[
+              ['10+', 'Years Experience'],
+              ['✓', 'TSSA Approved Technician'],
+              ['⌂', 'Residential & Commercial'],
+              ['●', 'Serving Ontario'],
+              ['★', 'Quality Work & Honest Service'],
+            ].map(([mark, label]) => (
+              <div key={label} className="flex items-center justify-center gap-3 py-5 px-3 text-center">
+                <span className="text-2xl font-black text-accent">{mark}</span>
+                <span className="text-xs sm:text-sm font-bold leading-tight">{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
         <Promotions />
         <Process />
         <WhyChoose />
